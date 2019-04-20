@@ -69,7 +69,7 @@ find_library(Tesseract_LIB
 )
 
 find_library(Leptonica_LIB
-  NAMES liblept170 liblept lept
+  NAMES liblept170 liblept lept libleptonica leptonica
   HINTS "/usr/lib"
         "/usr/local/lib"
         "/opt/local/lib"
