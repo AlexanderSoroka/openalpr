@@ -8,7 +8,7 @@
 include(LibFindMacros)
 
 # Use pkg-config to get hints about paths
-#libfind_pkg_check_modules(Tesseract_PKGCONF Tesseract)
+libfind_pkg_check_modules(Tesseract_PKGCONF Tesseract)
 
 # Include dir
 find_path(Tesseract_INCLUDE_BASEAPI_DIR
@@ -80,11 +80,8 @@ find_library(Leptonica_LIB
 
 # Set the include dir variables and the libraries and let libfind_process do the rest.
 # NOTE: Singular variables for this library, plural for libraries this this lib depends on.
-set(Tesseract_PROCESS_INCLUDES 
-    Tesseract_INCLUDE_BASEAPI_DIR 
-	Tesseract_INCLUDE_CCSTRUCT_DIR
-	Tesseract_INCLUDE_CCMAIN_DIR
-	Tesseract_INCLUDE_CCUTIL_DIR
-	Tesseract_INCLUDE_DIRS)
+set(Tesseract_PROCESS_INCLUDES Tesseract_INCLUDE_BASEAPI_DIR Tesseract_INCLUDE_DIRS)
+message(${Tesseract_PROCESS_INCLUDES})
 set(Tesseract_PROCESS_LIBS Tesseract_LIB Leptonica_LIB Tesseract_LIBRARIES)
+message(${Tesseract_PROCESS_LIBS})
 libfind_process(Tesseract)
